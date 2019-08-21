@@ -1,15 +1,31 @@
 <?php
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
+use MyApp\Handlers\ErrorHandler;
+use MyApp\Handlers\ShutdownHandler;
+use Slim\Exception\HttpInternalServerErrorException;
 use Slim\Factory\AppFactory;
+use Slim\Factory\ServerRequestCreatorFactory;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$app = AppFactory::create();
+// Set that to your needs
+$displayErrorDetails = true;
 
-$app->get('/', function (Request $request, Response $response, $args) {
-    $response->getBody()->write("Hello world!");
-    return $response;
-});
+$app = AppFactory::create();
+$callableResolver = $app->getCallableResolver();
+$responseFactory = $app->getResponseFactory();
+
+$serverRequestCreator = ServerRequestCreatorFactory::create();
+$request = $serverRequestCreator->createFromGlobals();
+
+$errorHandler = new HttpErrorHandler($callableResolver, $responseFactory);
+$shutdownHandler = new ShutdownHandler($request, $errorHandler, $displayErrorDetails);
+register_shutdown_function($shutdownHandler);
+
+// Add Routing Middleware
+$app->addRoutingMiddleware();
+
+// Add Error Handling Middleware
+$errorMiddleware = $app->addErrorMiddleware($displayErrorDetails, false, false);
+$errorMiddleware->setDefaultErrorHandler($errorHandler);
 
 $app->run();
