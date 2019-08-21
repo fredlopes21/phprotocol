@@ -1,0 +1,14 @@
+{
+    "name": "lucascudo/phprotocol",
+    "description": "Gestão de chamados",
+    "type": "project",
+    "require": {
+        "slim/slim": "4.0.0"
+    },
+    "authors": [
+        {
+            "name": "lucas",
+            "email": "lucasrochabr@outlook.com"
+        }
+    ]
+}
