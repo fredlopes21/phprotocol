@@ -7,7 +7,6 @@ use Slim\Factory\ServerRequestCreatorFactory;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-// Set that to your needs
 $displayErrorDetails = true;
 
 $app = AppFactory::create();
@@ -27,5 +26,25 @@ $app->addRoutingMiddleware();
 // Add Error Handling Middleware
 $errorMiddleware = $app->addErrorMiddleware($displayErrorDetails, false, false);
 $errorMiddleware->setDefaultErrorHandler($errorHandler);
+
+// Add Eloquent
+// Database information
+$settings = array(
+    'driver' => 'mysql',
+    'host' => '127.0.0.1',
+    'database' => '',
+    'username' => '',
+    'password' => '',
+    'collation' => 'utf8_general_ci',
+    'prefix' => ''
+);
+
+// Bootstrap Eloquent ORM
+$connFactory = new \Illuminate\Database\Connectors\ConnectionFactory();
+$conn = $connFactory->make($settings);
+$resolver = new \Illuminate\Database\ConnectionResolver();
+$resolver->addConnection('default', $conn);
+$resolver->setDefaultConnection('default');
+\Illuminate\Database\Eloquent\Model::setConnectionResolver($resolver);
 
 $app->run();
