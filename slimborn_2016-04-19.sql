@@ -37,6 +37,26 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+# Dump of table tickets
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `tickets`;
+
+CREATE TABLE `tickets` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `user` varchar(255) DEFAULT NULL,
+  `company` varchar(255) DEFAULT NULL '',
+  `channel` varchar(255) DEFAULT NULL '',
+  `type` varchar(255) DEFAULT NULL '',
+  `module` varchar(255) DEFAULT NULL '',
+  `description` varchar(255) DEFAULT NULL '',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
