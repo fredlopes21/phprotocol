@@ -1,0 +1,11 @@
+parameters:
+	level: 7
+	ignoreErrors:
+		- '#Undefined variable: \$app#'
+		- '#Undefined variable: \$capsule#'
+		- '#Undefined variable: \$container#'
+		- '#Undefined variable: \$this#'
+		- '#Using \$this outside a class#'
+		- '#Call to an undefined static method App\\Models\\User#'
+		- '#Call to an undefined method#'
+		- '#Access to an undefined property#'
