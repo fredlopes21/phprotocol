@@ -1,4 +1,7 @@
 # phprotocol
+[![CircleCI](https://circleci.com/gh/lucascudo/phprotocol.svg?style=svg)](https://circleci.com/gh/lucascudo/phprotocol)
+
+
 Gestão de chamados baseado no [Slim-Born do HavenShen](https://github.com/HavenShen/slim-born)
 
 
