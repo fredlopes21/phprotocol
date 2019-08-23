@@ -7,7 +7,7 @@
     			<div class="panel-heading">New Ticket</div>
     			<div class="panel-body">
     				<form action="{{ path_for('tickets.create') }}" method="post">
-                        {% include 'tickets/form.twig' %}
+                        {% include 'tickets/fields.twig' %}
                         {{ csrf.field | raw }}
                         <button type="submit" class="btn btn-primary">Create</button>
     				</form>

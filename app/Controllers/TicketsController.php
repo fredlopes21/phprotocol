@@ -42,8 +42,21 @@ class TicketsController extends Controller
 		$ticket = new Ticket($request->getParams());
 		$ticket->save();
 
-		$this->flash->addMessage('info', 'Ticket created');
+		$this->flash->addMessage('info', 'Ticket created successfully');
 
 		return $response->withRedirect($this->router->pathFor('tickets.index'));
 	}
+
+	public function destroy($request, $response, $args)
+    {
+
+        $ticket = Ticket::findOrFail($args['id']);
+        if (empty($ticket)) {
+            $this->flash->addMessage('error', 'Ticket not found');
+        } else {
+			$ticket->delete();
+			$this->flash->addMessage('info', 'Ticket deleted successfully');
+		}
+        return $response->withRedirect($this->router->pathFor('tickets.index'));
+    }
 }
