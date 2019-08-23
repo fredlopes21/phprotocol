@@ -1,6 +1,6 @@
 <div class="form-group{{ errors.user ? ' has-error' : '' }}">
     <label for="user">User</label>
-    <input type="text" name="user" id="user" class="form-control">
+    <input type="text" name="user" id="user" class="form-control" value="{{ ticket.user }}">
     {% if errors.user %}
     <span class="hel-block">{{ errors.user | first }}</span>
     {% endif %}
@@ -8,7 +8,7 @@
 
 <div class="form-group{{ errors.company ? ' has-error' : '' }}">
     <label for="company">Company</label>
-    <input type="text" name="company" id="company" class="form-control">
+    <input type="text" name="company" id="company" class="form-control" value="{{ ticket.company }}">
     {% if errors.company %}
     <span class="hel-block">{{ errors.company | first }}</span>
     {% endif %}
@@ -16,7 +16,7 @@
 
 <div class="form-group{{ errors.channel ? ' has-error' : '' }}">
     <label for="channel">Channel</label>
-    <input type="text" name="channel" id="channel" class="form-control">
+    <input type="text" name="channel" id="channel" class="form-control" value="{{ ticket.channel }}">
     {% if errors.channel %}
     <span class="hel-block">{{ errors.channel | first }}</span>
     {% endif %}
@@ -24,7 +24,7 @@
 
 <div class="form-group{{ errors.type ? ' has-error' : '' }}">
     <label for="type">Type</label>
-    <input type="text" name="type" id="type" class="form-control">
+    <input type="text" name="type" id="type" class="form-control" value="{{ ticket.type }}">
     {% if errors.type %}
     <span class="hel-block">{{ errors.type | first }}</span>
     {% endif %}
@@ -32,7 +32,7 @@
 
 <div class="form-group{{ errors.module ? ' has-error' : '' }}">
     <label for="module">Module</label>
-    <input type="text" name="module" id="module" class="form-control">
+    <input type="text" name="module" id="module" class="form-control" value="{{ ticket.module }}">
     {% if errors.module %}
     <span class="hel-block">{{ errors.module | first }}</span>
     {% endif %}
@@ -40,7 +40,7 @@
 
 <div class="form-group{{ errors.description ? ' has-error' : '' }}">
     <label for="description">Description (optional)</label>
-    <input type="text" name="description" id="description" class="form-control">
+    <input type="text" name="description" id="description" class="form-control" value="{{ ticket.description }}">
     {% if errors.description %}
     <span class="hel-block">{{ errors.description | first }}</span>
     {% endif %}

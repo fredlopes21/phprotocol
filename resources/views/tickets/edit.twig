@@ -6,10 +6,10 @@
     		<div class="panel panel-default">
     			<div class="panel-heading">New Ticket</div>
     			<div class="panel-body">
-    				<form action="{{ path_for('tickets.store') }}" method="post">
+    				<form action="{{ path_for('tickets.update', { id: ticket.id }) }}" method="post">
                         {% include 'tickets/fields.twig' %}
                         {{ csrf.field | raw }}
-                        <button type="submit" class="btn btn-primary">Create</button>
+                        <button type="submit" class="btn btn-primary">Update</button>
     				</form>
     			</div>
     		</div>

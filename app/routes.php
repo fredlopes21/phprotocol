@@ -12,10 +12,11 @@ $app->group('', function () {
 $app->group('', function () {
 	$this->get('/', 'TicketsController:index')->setName('home');
 	$this->get('/tickets', 'TicketsController:index')->setName('tickets.index');
-	$this->post('/tickets', 'TicketsController:create')->setName('tickets.create');
-	$this->get('/tickets/create', 'TicketsController:getCreationForm')->setName('tickets.getCreationForm');
+	$this->post('/tickets', 'TicketsController:store')->setName('tickets.store');
+	$this->get('/tickets/create', 'TicketsController:create')->setName('tickets.create');
 	$this->get('/tickets/{id}', 'TicketsController:show')->setName('tickets.show');
-	$this->get('/tickets/{id}/edit', 'TicketsController:getEditionForm')->setName('tickets.getEditionForm');
+	$this->get('/tickets/{id}/edit', 'TicketsController:edit')->setName('tickets.edit');
+	$this->post('/tickets/{id}', 'TicketsController:update')->setName('tickets.update');
 	$this->get('/tickets/{id}/delete', 'TicketsController:destroy')->setName('tickets.delete');
 	
 	$this->get('/auth/signout', 'AuthController:getSignOut')->setName('auth.signout');

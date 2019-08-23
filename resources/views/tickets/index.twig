@@ -3,7 +3,7 @@
 {% block content %}
 	<div class="content">
 		<h3 class="pull-left">Tickets</h3>
-		<a class="btn btn-primary pull-right" href="{{ path_for('tickets.getCreationForm') }}">New Ticket</a>
+		<a class="btn btn-primary pull-right" href="{{ path_for('tickets.create') }}">New Ticket</a>
 		<div class="clearfix"></div>
 		
 		{% include 'tickets/table.twig' %}

@@ -28,7 +28,7 @@
 								<a href="{{ path_for('tickets.show', { id: ticket.id }) }}" class='btn btn-primary'>
 									<i class="glyphicon glyphicon-eye-open"></i>
 								</a>
-								<a href="{{ path_for('tickets.getEditionForm', { id: ticket.id }) }}" class='btn btn-primary'>
+								<a href="{{ path_for('tickets.edit', { id: ticket.id }) }}" class='btn btn-primary'>
 									<i class="glyphicon glyphicon-edit"></i>
 								</a>
 								<button type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja deletar?')">
