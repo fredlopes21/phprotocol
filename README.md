@@ -6,19 +6,19 @@ Gestão de chamados baseado no [Slim-Born do HavenShen](https://github.com/Haven
 
 
 ## Installing
-Import slimborn_2016-04-19.sql into your Database, creates you .env file based on .env.example. Run:
+Import slimborn_2016-04-19.sql into your Database, creates you .env file based on .env.example and run:
 ```sh
 composer install
-```
-
-
-## Running
-```sh
-php -S 0.0.0.0:8888 -t public public/index.php
 ```
 
 
 ## Testing
 ```sh
 composer test
+```
+
+
+## Running
+```sh
+php -S 0.0.0.0:8888 -t public/
 ```

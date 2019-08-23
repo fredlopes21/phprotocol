@@ -58,8 +58,8 @@ $container['validator'] = function ($container) {
 	return new App\Validation\Validator;
 };
 
-$container['HomeController'] = function($container) {
-	return new \App\Controllers\HomeController($container);
+$container['TicketsController'] = function($container) {
+	return new \App\Controllers\TicketsController($container);
 };
 
 $container['AuthController'] = function($container) {
