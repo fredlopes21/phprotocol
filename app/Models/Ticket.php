@@ -24,5 +24,11 @@ class Ticket extends Model
 		'type',
 		'module',
 		'description',
+		'id_user',
 	];
+
+	public function local_user()
+    {
+        return $this->belongsTo('App\Models\User', 'id_user');
+	}
 }

@@ -49,7 +49,9 @@ class TicketsController extends Controller
 		if ($validation->failed()) {
 			return $response->withRedirect($this->router->pathFor('tickets.create'));
 		}
-		$ticket = new Ticket($request->getParams());
+		$params = $request->getParams();
+		$params['id_user'] = $this->auth->user()->id;
+		$ticket = new Ticket($params);
 		$ticket->save();
 		$this->flash->addMessage('info', 'Ticket created successfully');
 		return $response->withRedirect($this->router->pathFor('tickets.index'));

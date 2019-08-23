@@ -50,6 +50,7 @@ CREATE TABLE `tickets` (
   `type` varchar(255) DEFAULT NULL,
   `module` varchar(255) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL,
+  `id_user` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
